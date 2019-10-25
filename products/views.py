@@ -8,7 +8,7 @@ def home(request):
 	return render(request, 'products/home.html', {'products':products})
 
 
-@login_required
+@login_required(login_url="/accounts/signup")
 def create(request):
 	if request.method == 'POST':
 		if request.POST['title'] and request.POST['body'] and request.POST['url'] and request.FILES['icon'] and request.FILES['image']:
